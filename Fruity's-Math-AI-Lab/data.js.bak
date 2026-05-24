@@ -1,0 +1,555 @@
+/**
+ * data.js — Symbol Library Data
+ * Complete symbol definitions for Fruity's Lab
+ * Each symbol has: glyph, name, shortName, category, insert (math.js string),
+ *   explanation, definition, examples[]
+ */
+
+const SYMBOL_DATA = {
+
+  /* ─── Arithmetic ─── */
+  arithmetic: {
+    label: "Arithmetic",
+    symbols: [
+      {
+        glyph: "+", name: "Addition", shortName: "Add",
+        insert: "+",
+        explanation: "Adds two numbers or expressions together.",
+        definition: "a + b is the sum of a and b.",
+        examples: ["2 + 3 = 5", "x + 7", "a + b + c"]
+      },
+      {
+        glyph: "−", name: "Subtraction", shortName: "Subtract",
+        insert: "-",
+        explanation: "Subtracts the second number from the first.",
+        definition: "a − b is the difference of a and b.",
+        examples: ["10 − 4 = 6", "x − 2", "a − b"]
+      },
+      {
+        glyph: "×", name: "Multiplication", shortName: "Multiply",
+        insert: "*",
+        explanation: "Multiplies two numbers or expressions.",
+        definition: "a × b is the product of a and b.",
+        examples: ["4 × 5 = 20", "3 * x", "a * b"]
+      },
+      {
+        glyph: "÷", name: "Division", shortName: "Divide",
+        insert: "/",
+        explanation: "Divides the first number by the second.",
+        definition: "a ÷ b = a / b, the quotient of a and b.",
+        examples: ["12 ÷ 4 = 3", "x / 2", "(a + b) / c"]
+      },
+      {
+        glyph: "=", name: "Equals", shortName: "Equals",
+        insert: "=",
+        explanation: "Asserts that two expressions have the same value.",
+        definition: "a = b means a and b are equal.",
+        examples: ["x + 1 = 5", "2 + 2 = 4"]
+      },
+      {
+        glyph: "≠", name: "Not Equal", shortName: "≠",
+        insert: "!=",
+        explanation: "Asserts that two expressions are not equal.",
+        definition: "a ≠ b means a and b have different values.",
+        examples: ["3 ≠ 4", "x ≠ 0"]
+      },
+      {
+        glyph: "<", name: "Less Than", shortName: "Less",
+        insert: "<",
+        explanation: "The left side is smaller than the right side.",
+        definition: "a < b means a is strictly less than b.",
+        examples: ["2 < 5", "x < 10"]
+      },
+      {
+        glyph: ">", name: "Greater Than", shortName: "Greater",
+        insert: ">",
+        explanation: "The left side is larger than the right side.",
+        definition: "a > b means a is strictly greater than b.",
+        examples: ["7 > 3", "x > 0"]
+      },
+      {
+        glyph: "≤", name: "Less or Equal", shortName: "≤",
+        insert: "<=",
+        explanation: "The left side is smaller than or equal to the right.",
+        definition: "a ≤ b means a is less than or equal to b.",
+        examples: ["x ≤ 10", "2 ≤ 2"]
+      },
+      {
+        glyph: "≥", name: "Greater or Equal", shortName: "≥",
+        insert: ">=",
+        explanation: "The left side is larger than or equal to the right.",
+        definition: "a ≥ b means a is greater than or equal to b.",
+        examples: ["x ≥ 0", "5 ≥ 5"]
+      },
+      {
+        glyph: "%", name: "Modulo", shortName: "Mod",
+        insert: " mod ",
+        explanation: "Returns the remainder after dividing two numbers.",
+        definition: "a mod b is the remainder when a is divided by b.",
+        examples: ["10 mod 3 = 1", "7 mod 2 = 1"]
+      },
+      {
+        glyph: "!", name: "Factorial", shortName: "Fact.",
+        insert: "!",
+        explanation: "Multiplies all positive integers up to that number.",
+        definition: "n! = n × (n−1) × … × 2 × 1",
+        examples: ["5! = 120", "3! = 6", "0! = 1"]
+      }
+    ]
+  },
+
+  /* ─── Algebra ─── */
+  algebra: {
+    label: "Algebra",
+    symbols: [
+      {
+        glyph: "xⁿ", name: "Exponent / Power", shortName: "Power",
+        insert: "^",
+        explanation: "Raises a base to a given power — multiplied by itself n times.",
+        definition: "aⁿ = a × a × … × a (n times)",
+        examples: ["2^3 = 8", "x^2", "a^n"]
+      },
+      {
+        glyph: "√", name: "Square Root", shortName: "√",
+        insert: "sqrt(",
+        explanation: "Finds the number that, multiplied by itself, equals the value inside.",
+        definition: "√a = b such that b² = a, b ≥ 0",
+        examples: ["sqrt(9) = 3", "sqrt(16) = 4", "sqrt(a^2 + b^2)"]
+      },
+      {
+        glyph: "∛", name: "Cube Root", shortName: "∛",
+        insert: "cbrt(",
+        explanation: "Finds the number that, cubed, equals the value inside.",
+        definition: "∛a = b such that b³ = a",
+        examples: ["cbrt(27) = 3", "cbrt(8) = 2", "cbrt(-8) = -2"]
+      },
+      {
+        glyph: "|x|", name: "Absolute Value", shortName: "Abs",
+        insert: "abs(",
+        explanation: "Returns the distance from zero — always non-negative.",
+        definition: "|a| = a if a ≥ 0; −a if a < 0",
+        examples: ["abs(-5) = 5", "abs(3) = 3", "abs(x - 2)"]
+      },
+      {
+        glyph: "log", name: "Logarithm", shortName: "Log",
+        insert: "log(",
+        explanation: "The power to which a base must be raised to get a number.",
+        definition: "log_b(a) = c means b^c = a",
+        examples: ["log(100) = 2 (base 10)", "log(1000)", "log(e) = 1"]
+      },
+      {
+        glyph: "ln", name: "Natural Log", shortName: "Ln",
+        insert: "log(",
+        explanation: "Logarithm with base e (Euler's number).",
+        definition: "ln(a) = log_e(a)",
+        examples: ["log(e) = 1", "log(e^2) = 2"]
+      },
+      {
+        glyph: "n√", name: "Nth Root", shortName: "nRoot",
+        insert: "nthRoot(",
+        explanation: "Generalizes square root: finds b such that b^n = a.",
+        definition: "ⁿ√a = a^(1/n)",
+        examples: ["nthRoot(16, 4) = 2", "nthRoot(32, 5) = 2"]
+      },
+      {
+        glyph: "⌊x⌋", name: "Floor", shortName: "Floor",
+        insert: "floor(",
+        explanation: "Rounds down to the nearest integer.",
+        definition: "⌊x⌋ = largest integer ≤ x",
+        examples: ["floor(3.7) = 3", "floor(-1.2) = -2"]
+      },
+      {
+        glyph: "⌈x⌉", name: "Ceiling", shortName: "Ceil",
+        insert: "ceil(",
+        explanation: "Rounds up to the nearest integer.",
+        definition: "⌈x⌉ = smallest integer ≥ x",
+        examples: ["ceil(3.2) = 4", "ceil(-1.8) = -1"]
+      }
+    ]
+  },
+
+  /* ─── Trigonometry ─── */
+  trig: {
+    label: "Trigonometry",
+    symbols: [
+      {
+        glyph: "sin", name: "Sine", shortName: "Sin",
+        insert: "sin(",
+        explanation: "Ratio of opposite side to hypotenuse in a right triangle.",
+        definition: "sin(θ) = opposite / hypotenuse",
+        examples: ["sin(pi/2) = 1", "sin(0) = 0", "sin(pi/6) = 0.5"]
+      },
+      {
+        glyph: "cos", name: "Cosine", shortName: "Cos",
+        insert: "cos(",
+        explanation: "Ratio of adjacent side to hypotenuse in a right triangle.",
+        definition: "cos(θ) = adjacent / hypotenuse",
+        examples: ["cos(0) = 1", "cos(pi) = -1", "cos(pi/3) = 0.5"]
+      },
+      {
+        glyph: "tan", name: "Tangent", shortName: "Tan",
+        insert: "tan(",
+        explanation: "Ratio of opposite to adjacent side; sin/cos.",
+        definition: "tan(θ) = sin(θ) / cos(θ)",
+        examples: ["tan(pi/4) = 1", "tan(0) = 0"]
+      },
+      {
+        glyph: "sin⁻¹", name: "Arcsine", shortName: "Asin",
+        insert: "asin(",
+        explanation: "Inverse of sine — returns the angle whose sine is the input.",
+        definition: "asin(x) = θ such that sin(θ) = x",
+        examples: ["asin(1) = π/2", "asin(0.5) ≈ 0.5236"]
+      },
+      {
+        glyph: "cos⁻¹", name: "Arccosine", shortName: "Acos",
+        insert: "acos(",
+        explanation: "Inverse of cosine — returns the angle whose cosine is the input.",
+        definition: "acos(x) = θ such that cos(θ) = x",
+        examples: ["acos(1) = 0", "acos(0) = π/2"]
+      },
+      {
+        glyph: "tan⁻¹", name: "Arctangent", shortName: "Atan",
+        insert: "atan(",
+        explanation: "Inverse of tangent — returns the angle whose tangent is the input.",
+        definition: "atan(x) = θ such that tan(θ) = x",
+        examples: ["atan(1) = π/4", "atan(0) = 0"]
+      }
+    ]
+  },
+
+  /* ─── Calculus ─── */
+  calculus: {
+    label: "Calculus",
+    symbols: [
+      {
+        glyph: "∑", name: "Summation", shortName: "Sum",
+        insert: "sum(",
+        explanation: "Adds up a sequence of terms according to an index rule.",
+        definition: "∑ᵢ₌₁ⁿ f(i) = f(1) + f(2) + … + f(n)",
+        examples: ["sum(i, i, 1, 5) = 15", "∑ᵢ₌₀¹⁰ i²"]
+      },
+      {
+        glyph: "∏", name: "Product", shortName: "Prod",
+        insert: "prod(",
+        explanation: "Multiplies a sequence of terms according to an index rule.",
+        definition: "∏ᵢ₌₁ⁿ f(i) = f(1) × f(2) × … × f(n)",
+        examples: ["∏ᵢ₌₁⁵ i = 5! = 120"]
+      },
+      {
+        glyph: "∫", name: "Integral", shortName: "Integral",
+        insert: "integrate(",
+        explanation: "Computes the area under a curve between two bounds.",
+        definition: "∫ₐᵇ f(x) dx — area under f(x) from a to b",
+        examples: ["∫₀¹ x² dx = 1/3", "∫ sin(x) dx = −cos(x) + C"]
+      },
+      {
+        glyph: "∂", name: "Partial Derivative", shortName: "∂",
+        insert: "derivative(",
+        explanation: "Derivative with respect to one variable while others are held constant.",
+        definition: "∂f/∂x — rate of change of f with x fixed",
+        examples: ["∂(x²y)/∂x = 2xy", "∂(xy)/∂y = x"]
+      },
+      {
+        glyph: "d/dx", name: "Derivative", shortName: "d/dx",
+        insert: "derivative(",
+        explanation: "The instantaneous rate of change of a function with respect to x.",
+        definition: "d/dx f(x) = lim_{h→0} [f(x+h) − f(x)] / h",
+        examples: ["d/dx(x²) = 2x", "d/dx(sin x) = cos x"]
+      },
+      {
+        glyph: "lim", name: "Limit", shortName: "Limit",
+        insert: "lim(",
+        explanation: "The value a function approaches as its input approaches a point.",
+        definition: "lim_{x→a} f(x) = L means f(x) → L as x → a",
+        examples: ["lim_{x→0} sin(x)/x = 1", "lim_{x→∞} 1/x = 0"]
+      },
+      {
+        glyph: "Δ", name: "Delta / Change", shortName: "Delta",
+        insert: "delta",
+        explanation: "Represents a finite change or difference in a variable.",
+        definition: "Δx = x₂ − x₁ (change in x)",
+        examples: ["Δy / Δx ≈ slope", "Δt = t₂ − t₁"]
+      },
+      {
+        glyph: "∞", name: "Infinity", shortName: "Inf",
+        insert: "Infinity",
+        explanation: "A concept describing something without any bound or end.",
+        definition: "∞ is not a number but represents unbounded growth",
+        examples: ["lim_{x→∞} 1/x = 0", "∑ᵢ₌₁^∞ 1/2^i = 1"]
+      }
+    ]
+  },
+
+  /* ─── Set Theory ─── */
+  sets: {
+    label: "Set Theory",
+    symbols: [
+      {
+        glyph: "∈", name: "Element Of", shortName: "∈",
+        insert: " ∈ ",
+        explanation: "Indicates that an element belongs to a set.",
+        definition: "x ∈ A means x is a member of set A.",
+        examples: ["3 ∈ {1, 2, 3}", "x ∈ ℝ"]
+      },
+      {
+        glyph: "∉", name: "Not Element Of", shortName: "∉",
+        insert: " ∉ ",
+        explanation: "Indicates an element does NOT belong to a set.",
+        definition: "x ∉ A means x is not a member of set A.",
+        examples: ["5 ∉ {1, 2, 3}", "0 ∉ ℕ"]
+      },
+      {
+        glyph: "⊂", name: "Proper Subset", shortName: "⊂",
+        insert: " ⊂ ",
+        explanation: "Set A is contained in set B but is not equal to B.",
+        definition: "A ⊂ B: every element of A is in B, and A ≠ B.",
+        examples: ["{1,2} ⊂ {1,2,3}", "ℕ ⊂ ℤ"]
+      },
+      {
+        glyph: "⊆", name: "Subset or Equal", shortName: "⊆",
+        insert: " ⊆ ",
+        explanation: "Set A is contained in or equal to set B.",
+        definition: "A ⊆ B: every element of A is in B (A may equal B).",
+        examples: ["{1,2} ⊆ {1,2,3}", "A ⊆ A"]
+      },
+      {
+        glyph: "∪", name: "Union", shortName: "Union",
+        insert: " ∪ ",
+        explanation: "All elements that belong to either set A or set B (or both).",
+        definition: "A ∪ B = {x : x ∈ A or x ∈ B}",
+        examples: ["{1,2} ∪ {2,3} = {1,2,3}"]
+      },
+      {
+        glyph: "∩", name: "Intersection", shortName: "∩",
+        insert: " ∩ ",
+        explanation: "All elements that belong to both set A AND set B.",
+        definition: "A ∩ B = {x : x ∈ A and x ∈ B}",
+        examples: ["{1,2,3} ∩ {2,3,4} = {2,3}"]
+      },
+      {
+        glyph: "∅", name: "Empty Set", shortName: "∅",
+        insert: "∅",
+        explanation: "A set containing no elements at all.",
+        definition: "∅ = {} — the set with zero members.",
+        examples: ["{x : x ≠ x} = ∅", "A ∩ B = ∅ means disjoint"]
+      },
+      {
+        glyph: "ℕ", name: "Natural Numbers", shortName: "ℕ",
+        insert: "ℕ",
+        explanation: "The set of positive counting numbers: 1, 2, 3, …",
+        definition: "ℕ = {1, 2, 3, 4, …} (some include 0)",
+        examples: ["3 ∈ ℕ", "ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ"]
+      },
+      {
+        glyph: "ℝ", name: "Real Numbers", shortName: "ℝ",
+        insert: "ℝ",
+        explanation: "All numbers on the number line, including irrationals.",
+        definition: "ℝ includes all rational and irrational numbers.",
+        examples: ["π ∈ ℝ", "√2 ∈ ℝ", "ℚ ⊂ ℝ"]
+      }
+    ]
+  },
+
+  /* ─── Logic ─── */
+  logic: {
+    label: "Logic",
+    symbols: [
+      {
+        glyph: "∀", name: "For All", shortName: "∀",
+        insert: "∀",
+        explanation: "A statement that is true for every element in a set.",
+        definition: "∀x P(x) means P(x) is true for every x.",
+        examples: ["∀x ∈ ℝ, x² ≥ 0", "∀n ∈ ℕ, n + 1 > n"]
+      },
+      {
+        glyph: "∃", name: "There Exists", shortName: "∃",
+        insert: "∃",
+        explanation: "Asserts that at least one element satisfies a condition.",
+        definition: "∃x P(x) means there is at least one x where P(x) is true.",
+        examples: ["∃x such that x² = 4", "∃n ∈ ℕ, n > 100"]
+      },
+      {
+        glyph: "¬", name: "Logical NOT", shortName: "NOT",
+        insert: "!",
+        explanation: "Negates a statement — turns true to false and vice versa.",
+        definition: "¬P is true when P is false.",
+        examples: ["¬(x > 0) means x ≤ 0", "¬true = false"]
+      },
+      {
+        glyph: "∧", name: "Logical AND", shortName: "AND",
+        insert: " and ",
+        explanation: "True only when BOTH conditions are true.",
+        definition: "P ∧ Q is true iff P is true AND Q is true.",
+        examples: ["(x > 0) ∧ (x < 10)", "true ∧ false = false"]
+      },
+      {
+        glyph: "∨", name: "Logical OR", shortName: "OR",
+        insert: " or ",
+        explanation: "True when AT LEAST ONE condition is true.",
+        definition: "P ∨ Q is true iff P is true OR Q is true (or both).",
+        examples: ["(x < 0) ∨ (x > 5)", "false ∨ true = true"]
+      },
+      {
+        glyph: "⇒", name: "Implies", shortName: "⇒",
+        insert: " ⇒ ",
+        explanation: "If the left condition is true, then the right must also be true.",
+        definition: "P ⇒ Q is false only when P is true and Q is false.",
+        examples: ["x = 2 ⇒ x² = 4", "(P ∧ Q) ⇒ P"]
+      },
+      {
+        glyph: "⟺", name: "If and Only If", shortName: "⟺",
+        insert: " ⟺ ",
+        explanation: "Both sides are either both true or both false.",
+        definition: "P ⟺ Q means P ⇒ Q and Q ⇒ P.",
+        examples: ["x > 0 ⟺ |x| = x"]
+      }
+    ]
+  },
+
+  /* ─── Constants ─── */
+  constants: {
+    label: "Constants",
+    symbols: [
+      {
+        glyph: "π", name: "Pi", shortName: "π",
+        insert: "pi",
+        explanation: "The ratio of a circle's circumference to its diameter.",
+        definition: "π ≈ 3.14159265358979…",
+        examples: ["Area = pi * r^2", "Circumference = 2 * pi * r", "cos(pi) = -1"]
+      },
+      {
+        glyph: "e", name: "Euler's Number", shortName: "e",
+        insert: "e",
+        explanation: "The base of the natural logarithm; the unique number whose derivative is itself.",
+        definition: "e ≈ 2.71828182845904…",
+        examples: ["e^1 = e", "e^0 = 1", "log(e) = 1"]
+      },
+      {
+        glyph: "φ", name: "Golden Ratio", shortName: "φ",
+        insert: "(1 + sqrt(5)) / 2",
+        explanation: "Special ratio where a/b = (a+b)/a; appears throughout nature.",
+        definition: "φ = (1 + √5) / 2 ≈ 1.61803…",
+        examples: ["φ ≈ 1.618", "φ² = φ + 1"]
+      },
+      {
+        glyph: "i", name: "Imaginary Unit", shortName: "i",
+        insert: "i",
+        explanation: "The square root of −1; basis of complex numbers.",
+        definition: "i = √−1, so i² = −1",
+        examples: ["i^2 = -1", "i^4 = 1", "(2+3i)(1-i)"]
+      }
+    ]
+  },
+
+  /* ─── Greek Letters ─── */
+  greek: {
+    label: "Greek Letters",
+    symbols: [
+      {
+        glyph: "α", name: "Alpha", shortName: "Alpha",
+        insert: "alpha",
+        explanation: "Often used for angles, coefficients, or constants.",
+        definition: "First letter of the Greek alphabet.",
+        examples: ["f(x) = alpha * x^2", "angle alpha = 30°"]
+      },
+      {
+        glyph: "β", name: "Beta", shortName: "Beta",
+        insert: "beta",
+        explanation: "Often used for second parameter, angle, or regression coefficient.",
+        definition: "Second letter of the Greek alphabet.",
+        examples: ["y = alpha * x + beta", "Beta distribution"]
+      },
+      {
+        glyph: "γ", name: "Gamma", shortName: "Gamma",
+        insert: "gamma(",
+        explanation: "Gamma function generalizes factorial; also used for angles.",
+        definition: "Γ(n) = (n−1)! for positive integers",
+        examples: ["gamma(6) = 120", "Γ(1/2) = √π"]
+      },
+      {
+        glyph: "δ", name: "Delta (small)", shortName: "δ",
+        insert: "delta",
+        explanation: "Represents a very small change or perturbation.",
+        definition: "δ is often used in limits and error bounds.",
+        examples: ["|x − a| < δ ⇒ |f(x) − L| < ε"]
+      },
+      {
+        glyph: "ε", name: "Epsilon", shortName: "ε",
+        insert: "epsilon",
+        explanation: "Represents a very small positive number; used in limits.",
+        definition: "ε > 0 is arbitrarily small in analysis.",
+        examples: ["lim definition: ∀ε>0, ∃δ>0…"]
+      },
+      {
+        glyph: "λ", name: "Lambda", shortName: "λ",
+        insert: "lambda",
+        explanation: "Used for eigenvalues, rate parameters, or wavelength.",
+        definition: "Av = λv defines eigenvalue λ.",
+        examples: ["λ = c/f (wavelength)", "Poisson(λ)"]
+      },
+      {
+        glyph: "θ", name: "Theta", shortName: "θ",
+        insert: "theta",
+        explanation: "Commonly used to represent angles in trigonometry.",
+        definition: "θ is the standard symbol for an unknown angle.",
+        examples: ["sin(theta)", "cos(theta)^2 + sin(theta)^2 = 1"]
+      },
+      {
+        glyph: "σ", name: "Sigma (small)", shortName: "σ",
+        insert: "sigma",
+        explanation: "Represents standard deviation in statistics.",
+        definition: "σ = √(Σ(xᵢ − μ)² / n)",
+        examples: ["Normal(μ, sigma^2)", "σ² = variance"]
+      },
+      {
+        glyph: "μ", name: "Mu", shortName: "μ",
+        insert: "mu",
+        explanation: "Represents the mean (average) in statistics.",
+        definition: "μ = (Σ xᵢ) / n",
+        examples: ["Normal(mu, sigma)", "μ = expected value"]
+      },
+      {
+        glyph: "ω", name: "Omega", shortName: "ω",
+        insert: "omega",
+        explanation: "Used for angular frequency or complex roots of unity.",
+        definition: "ω = 2πf in physics (angular frequency).",
+        examples: ["ω = 2*pi*f", "nth roots of unity"]
+      },
+      {
+        glyph: "ρ", name: "Rho", shortName: "ρ",
+        insert: "rho",
+        explanation: "Used for density, radius in polar coords, or correlation.",
+        definition: "ρ = m/V (density); or correlation coefficient.",
+        examples: ["Pearson ρ ∈ [−1, 1]"]
+      },
+      {
+        glyph: "τ", name: "Tau", shortName: "τ",
+        insert: "tau",
+        explanation: "Equal to 2π; also used for time constant or torque.",
+        definition: "τ = 2π ≈ 6.28318…",
+        examples: ["Full circle = tau radians", "RC tau = time constant"]
+      }
+    ]
+  }
+};
+
+/**
+ * Random example equations for the "Random Example" button
+ */
+const RANDOM_EXAMPLES = [
+  { eq: "sqrt(a^2 + b^2)",       label: "Pythagorean Theorem" },
+  { eq: "(-b + sqrt(b^2 - 4*a*c)) / (2*a)", label: "Quadratic Formula" },
+  { eq: "e^(i*pi) + 1",          label: "Euler's Identity (approx)" },
+  { eq: "sqrt(9) + 2^3",         label: "Roots and Powers" },
+  { eq: "abs(-7) + floor(3.9)",   label: "Abs + Floor" },
+  { eq: "sin(pi/6)^2 + cos(pi/6)^2", label: "Pythagorean Identity" },
+  { eq: "log(e^5)",               label: "Log and Exp cancel" },
+  { eq: "(1 + sqrt(5)) / 2",      label: "Golden Ratio φ" },
+  { eq: "factorial(6) / (factorial(3) * factorial(3))", label: "Binomial Coefficient 6C3" },
+  { eq: "ceil(2.3) * floor(4.8)", label: "Ceiling × Floor" },
+  { eq: "2^10",                   label: "Binary kilobyte" },
+  { eq: "sum(k^2, k, 1, 5)",      label: "Sum of squares 1–5" },
+  { eq: "derivative(x^3 + 2*x, x)", label: "Derivative example" },
+  { eq: "cbrt(125)",              label: "Cube Root" },
+  { eq: "nthRoot(256, 4)",        label: "4th Root of 256" }
+];

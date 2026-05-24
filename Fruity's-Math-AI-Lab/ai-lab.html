@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<!-- Created By Jevante Boley All Rights Reserved Powered By FruitySoup Studio -->                                                           <!--- Created By Jevante Boxley -->
+<html lang="en">                                                             <!-- All Rights Reserved -->                                                                Welcome to Play around and make changes Just keep me name in the build  -->    
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fruity's — AI Algorithms & Stuff</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css"/>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.2/math.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="ai-lab.css"/>
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+  </div>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">⬡</span>
+        <div class="logo-text">
+          <span class="logo-title">Fruity's <span class="logo-tag">AI Lab</span></span>
+          <span class="logo-sub">AI Algorithms · Live Visualization · Real Data Import</span>
+        </div>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Symbol Explorer
+        </a>
+        <span class="nav-sep">·</span>
+        <span class="nav-active">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          AI Lab
+        </span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══ ALGO TAB BAR ═══ -->
+  <div class="algo-selector-bar" id="algo-selector-bar">
+    <div class="algo-selector-inner">
+      <div class="algo-tabs" id="algo-tabs"></div>
+    </div>
+  </div>
+
+  <!-- ═══ MAIN 3-COLUMN LAYOUT ═══ -->
+  <div class="lab-outer">
+    <main class="lab-layout" id="lab-layout">
+
+      <!-- ── LEFT: Info + Data Import ── -->
+      <aside class="left-col" id="left-col">
+
+        <!-- Algorithm info -->
+        <div class="panel info-panel" id="info-panel">
+          <div class="info-header">
+            <div class="info-algo-icon" id="info-icon">⬡</div>
+            <div>
+              <div class="info-algo-name" id="info-name">Select an Algorithm</div>
+              <div class="info-algo-family" id="info-family">AI · Machine Learning</div>
+            </div>
+          </div>
+
+          <div class="panel-scroll">
+            <div class="info-section">
+              <div class="info-label">What It Does</div>
+              <p class="info-desc" id="info-desc">Select an algorithm from the tabs above.</p>
+            </div>
+            <div class="info-section">
+              <div class="info-label">Core Mathematics</div>
+              <div class="info-math" id="info-math"></div>
+            </div>
+            <div class="info-section">
+              <div class="info-label">How It Works</div>
+              <ol class="info-steps" id="info-steps"></ol>
+            </div>
+            <div class="info-section">
+              <div class="info-label">Real-World Shit</div>
+              <div class="info-apps" id="info-apps"></div>
+            </div>
+            <div class="info-section">
+              <div class="info-label">Complexity</div>
+              <div class="complexity-row" id="info-complexity"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── DATA IMPORT PANEL ── -->
+        <div class="panel data-panel" id="data-panel">
+          <div class="data-panel-header">
+            <span class="data-panel-title">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+              Data Import
+            </span>
+            <span class="data-active-badge" id="data-active-badge" style="display:none;">● Custom</span>
+          </div>
+
+          <div class="data-panel-body">
+
+            <!-- Sample datasets -->
+            <div class="data-section-label">Sample Datasets</div>
+            <div class="sample-datasets" id="sample-datasets">
+              <button class="sample-btn" data-sample="linear">📈 Linear</button>
+              <button class="sample-btn" data-sample="nonlinear">〜 Nonlinear</button>
+              <button class="sample-btn" data-sample="clusters">⬡ Clusters</button>
+              <button class="sample-btn" data-sample="moons">🌙 Moons</button>
+              <button class="sample-btn" data-sample="iris">🌸 Iris 2D</button>
+              <button class="sample-btn" data-sample="xor">⊕ XOR</button>
+              <button class="sample-btn" data-sample="spiral">🌀 Spiral</button>
+              <button class="sample-btn" data-sample="circles">◎ Circles</button>
+            </div>
+
+            <!-- CSV upload -->
+            <div class="data-section-label" style="margin-top:12px;">Upload CSV File</div>
+            <div class="drop-zone" id="drop-zone">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              <span class="drop-zone-text">Drop CSV here or click to browse</span>
+              <span class="drop-zone-hint">Columns: x, y [, label]  ·  First row = header (optional)</span>
+              <input type="file" id="csv-file-input" accept=".csv,.tsv,.txt" style="display:none"/>
+            </div>
+
+            <!-- Paste textarea -->
+            <div class="data-section-label" style="margin-top:12px;">Paste Data</div>
+            <textarea id="data-paste-area" class="data-textarea"
+              placeholder="Paste CSV rows here, e.g.:&#10;1.2, 3.4&#10;5.6, 7.8, 1&#10;x, y columns — label optional"></textarea>
+            <div class="data-paste-actions">
+              <button class="data-btn primary" id="btn-load-paste">Load Data</button>
+              <button class="data-btn" id="btn-clear-data">Use Synthetic</button>
+            </div>
+
+            <!-- Column mapping -->
+            <div id="col-map-section" style="display:none;">
+              <div class="data-section-label" style="margin-top:10px;">Column Mapping</div>
+              <div class="col-map-row">
+                <label>X axis <select id="col-x" class="col-select"></select></label>
+                <label>Y axis <select id="col-y" class="col-select"></select></label>
+                <label>Label <select id="col-label" class="col-select"><option value="">None</option></select></label>
+              </div>
+              <button class="data-btn primary" id="btn-apply-cols" style="margin-top:6px;width:100%;">Apply Mapping</button>
+            </div>
+
+            <!-- Data status -->
+            <div class="data-status" id="data-status"></div>
+
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- ── CENTER: Canvas Visualization ── -->
+      <section class="center-col viz-panel" id="viz-panel">
+        <div class="viz-toolbar">
+          <div class="viz-title" id="viz-title">Fruity's AI Algorithms & Stuff</div>
+          <div class="viz-controls" id="viz-controls"></div>
+          <div class="viz-actions">
+            <button class="btn-action" id="btn-play">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>Run
+            </button>
+            <button class="btn-action secondary" id="btn-reset">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.51"/></svg>Reset
+            </button>
+            <button class="btn-action secondary" id="btn-step">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>Step
+            </button>
+          </div>
+        </div>
+
+        <!-- Speed control -->
+        <div class="speed-bar">
+          <span class="speed-label">Speed</span>
+          <input type="range" id="speed-slider" min="10" max="400" value="40" step="10"/>
+          <span class="speed-val" id="speed-val">40ms</span>
+          <span class="speed-label" style="margin-left:12px;">Data points</span>
+          <span class="data-count-badge" id="data-count-badge">synthetic</span>
+        </div>
+
+        <div class="viz-stage" id="viz-stage">
+          <!-- Welcome screen -->
+          <div class="viz-welcome" id="viz-welcome">
+            <div class="welcome-icon">⬡</div>
+            <h2>AI Algorithms Interactive Lab</h2>
+            <p>Select an algorithm above to watch its math come alive.<br/>Import your own CSV data or choose a sample dataset on the left.</p>
+            <div class="welcome-grid">
+              <div class="welcome-card" data-algo="gradient_descent"><span class="wc-icon">∇</span><span class="wc-name">Gradient Descent</span></div>
+              <div class="welcome-card" data-algo="neural_network"><span class="wc-icon">⬡</span><span class="wc-name">Neural Network</span></div>
+              <div class="welcome-card" data-algo="linear_regression"><span class="wc-icon">≈</span><span class="wc-name">Linear Regression</span></div>
+              <div class="welcome-card" data-algo="kmeans"><span class="wc-icon">◎</span><span class="wc-name">K-Means</span></div>
+              <div class="welcome-card" data-algo="pca"><span class="wc-icon">↗</span><span class="wc-name">PCA</span></div>
+              <div class="welcome-card" data-algo="attention"><span class="wc-icon">◈</span><span class="wc-name">Attention</span></div>
+            </div>
+          </div>
+
+          <!-- Canvas -->
+          <div class="canvas-area" id="canvas-area" style="display:none;">
+            <canvas id="main-canvas"></canvas>
+          </div>
+
+          <!-- Phase 5: Architecture Builder (shown when builder mode active) -->
+          <div class="builder-area" id="builder-area" style="display:none;">
+            <div class="builder-toolbar">
+              <span class="builder-title">Architecture Builder</span>
+              <button class="builder-btn" id="btn-builder-dense">+ Dense</button>
+              <button class="builder-btn" id="btn-builder-dropout">+ Dropout</button>
+              <button class="builder-btn accent" id="btn-builder-export">Export → NN</button>
+              <button class="builder-btn" id="btn-builder-reset">Reset</button>
+              <label class="builder-slider-label">
+                Units/Rate
+                <input type="range" id="builder-unit-slider" min="1" max="64" step="1" value="8">
+                <span id="builder-unit-val">8</span>
+              </label>
+            </div>
+            <div class="builder-canvas-wrap">
+              <canvas id="builder-canvas"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live equation strip -->
+        <div class="live-equation-bar" id="live-eq-bar" style="display:none;">
+          <span class="live-eq-label">Live Equation</span>
+          <div class="live-eq-display" id="live-eq-display"></div>
+          <span class="live-eq-values" id="live-eq-values"></span>
+        </div>
+      </section>
+
+      <!-- ── RIGHT: Live Metrics ── -->
+      <aside class="right-col stats-panel" id="stats-panel">
+        <div class="stats-header">
+          <span class="stats-title">Live Metrics</span>
+          <span class="stats-badge" id="stats-iteration">—</span>
+        </div>
+
+        <div class="right-col-scroll">
+          <div class="metric-cards" id="metric-cards">
+            <div class="metric-placeholder"><p>Run an algorithm to see live metrics.</p></div>
+          </div>
+
+          <div class="mini-chart-wrap" id="mini-chart-wrap" style="display:none;">
+            <div class="mini-chart-label" id="mini-chart-label">Loss Curve</div>
+            <canvas id="mini-chart" height="110"></canvas>
+          </div>
+
+          <!-- Phase 5: Evolution panel -->
+          <div class="evo-panel" id="evo-panel" style="display:none;">
+            <div class="evo-panel-header">
+              <span class="evo-panel-title">⚗ Neuroevolution</span>
+              <button class="evo-btn" id="btn-evo-init">Init</button>
+              <button class="evo-btn accent" id="btn-evo-run">Evolve</button>
+              <button class="evo-btn" id="btn-evo-mutate">Mutate Best</button>
+              <button class="evo-btn green" id="btn-evo-apply">Apply Best</button>
+            </div>
+            <div class="evo-population" id="evo-population"></div>
+          </div>
+
+          <!-- Phase 5: Experiment tracker panel -->
+          <div class="exp-tracker-panel" id="exp-tracker-panel">
+            <div class="exp-tracker-header">
+              <span class="exp-tracker-title">📋 Experiments</span>
+              <button class="exp-tracker-btn" id="btn-exp-compare">Compare</button>
+              <button class="exp-tracker-btn" id="btn-exp-clear">Clear All</button>
+            </div>
+            <div id="exp-list-container"></div>
+            <div id="exp-compare-container" style="display:none;">
+              <div class="exp-compare-title">Loss Curves</div>
+              <div id="exp-compare-chart"></div>
+            </div>
+          </div>
+
+          <div class="log-panel" id="log-panel">
+            <div class="log-header">
+              <span>Iteration Log</span>
+              <button class="log-clear-btn" id="log-clear-btn">Clear</button>
+            </div>
+            <div class="log-output" id="log-output">
+              <div class="log-entry log-info">AI Lab ready. Select an algorithm to begin.</div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </main>
+  </div><!-- /.lab-outer -->
+
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <!-- Phase 4: Experiment tracker loads before everything else (no deps) -->
+  <script src="ai-lab/training/experimentTracker.js"></script>
+  <!-- Phase 4: Worker bridge and WS client load before algorithms -->
+  <script src="ai-lab/training/workerBridge.js"></script>
+  <script src="ai-lab/training/wsClient.js"></script>
+  <!-- Phase 5: Mutation engine and architecture builder -->
+  <script src="ai-lab/training/mutationEngine.js"></script>
+  <script src="ai-lab/training/architectureBuilder.js"></script>
+
+  <script src="ai-lab-data.js"></script>
+
+  <!-- Phase 1: Modular architecture — load order is strict (see dependency map) -->
+  <!-- Core layer -->
+  <script src="ai-lab/core/state.js"></script>
+  <script src="ai-lab/core/utils.js"></script>
+  <script src="ai-lab/core/ui.js"></script>
+  <script src="ai-lab/core/canvas.js"></script>
+  <script src="ai-lab/core/dataSystem.js"></script>
+  <!-- Algorithm layer (neuralNetwork.js first: exports forwardNN used by backpropagation.js) -->
+  <script src="ai-lab/algorithms/neuralNetwork.js"></script>
+  <script src="ai-lab/algorithms/backpropagation.js"></script>
+  <script src="ai-lab/algorithms/gradientDescent.js"></script>
+  <script src="ai-lab/algorithms/linearRegression.js"></script>
+  <script src="ai-lab/algorithms/kmeans.js"></script>
+  <script src="ai-lab/algorithms/pca.js"></script>
+  <script src="ai-lab/algorithms/attention.js"></script>
+  <script src="ai-lab/algorithms/svm.js"></script>
+  <script src="ai-lab/algorithms/decisionTree.js"></script>
+  <!-- Dispatch + runtime (must come after all algorithms) -->
+  <script src="ai-lab/registry.js"></script>
+  <script src="ai-lab/runtime.js"></script>
+</body>
+</html>

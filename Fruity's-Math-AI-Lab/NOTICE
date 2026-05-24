@@ -1,0 +1,67 @@
+C.A.C - Fruity's Math-AI Lab
+Copyright 2025 Jevante Boxley / FruitySoup Studio
+All Rights Reserved.
+
+================================================================================
+
+This product is licensed under the Apache License, Version 2.0 (the "License").
+You may obtain a copy of the License at:
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+================================================================================
+
+PROJECT INFORMATION
+-------------------
+
+Project Name:   C.A.C - Fruity's Math-AI Lab
+Author:         Jevante Boxley
+Organization:   FruitySoup Studio
+Repository:     https://github.com/FruitySoupStudio/CAC-Math-AI-Lab
+
+================================================================================
+
+DESCRIPTION
+-----------
+
+C.A.C (Calculator, Algebra, Calculus) is an interactive mathematics learning
+platform developed by FruitySoup Studio. The application provides AI-assisted
+mathematical education covering arithmetic, algebra, and calculus concepts
+through an intuitive web-based interface.
+
+================================================================================
+
+THIRD-PARTY NOTICES
+-------------------
+
+This software may include or depend on third-party libraries and components.
+Any such components retain their original licenses and attributions as
+specified by their respective authors.
+
+If you use, modify, or distribute this software, you must:
+
+1. Include this NOTICE file in any distribution
+2. Retain all copyright notices and attributions
+3. Comply with the terms of the Apache License 2.0
+
+================================================================================
+
+CONTACT
+-------
+
+For questions, contributions, or licensing inquiries:
+
+    Author:     Jevante Boxley
+    Studio:     FruitySoup Studio
+
+    Personal:   JevanteB@pm.me
+    Business:   FruitySoup@proton.me
+
+================================================================================
+
+END OF NOTICE
