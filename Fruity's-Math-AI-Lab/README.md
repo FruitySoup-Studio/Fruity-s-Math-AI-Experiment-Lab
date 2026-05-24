@@ -1,6 +1,6 @@
 # Fruity's Lab · AI Labb
 
-For those whom need a more visual approach to learning i got you. My browser tool will teach you about all math that goes into current day models as well as let you plug in and experiment with your own data and math to guide the learning and maybe discover something new. This is the small early beta of the tool and will have MUCH MORE additions here soon. Those whom would like to add to the build please reach out i would love to see this grow into something very useful for other like minded researchers.  
+This is the smaller version of my Math-AI-Lab Tool that is used in your browser. Experiment with Equations and Drag and Drop your own Data sets to see how the nodels interacts with it Visually. Play around with your own Math and see what you can discover. Open to collaborating and building onto my beta version. 
 ---
 
 ## Quick Start
